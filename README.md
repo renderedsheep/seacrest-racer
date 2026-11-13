@@ -206,6 +206,8 @@ Licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE.md)**:
 
 Noncommercial licenses are *source-available*, not *open source* in the OSI sense, because open source licenses must allow commercial use.
 
-All game art, music, code and level data are original to this project. The title logo was lettered with Racing Sans One and Russo One, and the manual is set in IBM Plex; all are under the SIL Open Font License. Built with the help of Claude.
+All game art, music, code and level data are original to this project. The title logo was lettered with Racing Sans One and Russo One, and the manual is set in IBM Plex; all are under the SIL Open Font License.
+
+**AI assistance.** This project was made with the help of Claude, an AI model by Anthropic. Claude was used to generate the 68000 C and assembly code and the documentation, and to help reverse-engineer and understand the Sega Genesis / Mega Drive hardware. Game design, art direction and testing are by Fernand G.
 
 <sub>Seacrest Racer is an independent fan homage to 1990s arcade racers. It is not affiliated with, endorsed by or connected to Sega, Bandai Namco or any other publisher. Sega, Genesis and Mega Drive are trademarks of Sega Corporation.</sub>

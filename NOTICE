@@ -17,6 +17,13 @@ Third-party material
   Only the rendered pixels are included; the font files are not distributed.
 - All other art, music, code and level data are original to this project.
 
+AI assistance
+- This project was made with the help of Claude, an AI model by Anthropic.
+  Claude was used to generate the 68000 C and assembly code and the
+  documentation, and to help reverse-engineer and understand the Sega
+  Genesis / Mega Drive hardware. Game design, art direction and testing:
+  Fernand G.
+
 Seacrest Racer is an independent fan homage to 1990s arcade racers. It is not
 affiliated with, endorsed by or connected to Bandai Namco or any other
 publisher. Sega, Genesis and Mega Drive are trademarks of Sega Corporation.
