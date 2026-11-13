@@ -21,10 +21,12 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 
 | | |
 |:---:|:---:|
-| <img src="docs/images/title.png" alt="Title screen" width="400"> | <img src="docs/images/start.png" alt="Starting grid" width="400"> |
+| <img src="docs/images/sunset_title.png" alt="Title screen at Sunset Bay" width="400"> | <img src="docs/images/start.png" alt="Starting grid on Seacrest Coast" width="400"> |
 | **Title screen.** Pick a course with left / right. | **The start.** Red, amber, green, go. |
-| <img src="docs/images/skidmarks.png" alt="Drifting" width="400"> | <img src="docs/images/hazards.png" alt="Road hazards" width="400"> |
-| **Drift** with brake + steer: skid marks and smoke. | **Hazards** from the SDK: oil slicks and loose tyres. |
+| <img src="docs/images/sunset_drift.png" alt="Drifting under the helicopter at Sunset Bay" width="400"> | <img src="docs/images/skidmarks.png" alt="Skid marks on Seacrest Coast" width="400"> |
+| **Sunset Bay.** Drift under the camera helicopter. | **Seacrest Coast.** Brake + steer leaves skid marks and smoke. |
+| <img src="docs/images/hazards.png" alt="Oil slick and oil drums" width="400"> | <img src="docs/images/sunset_grandstand.png" alt="Sunset Bay grandstand straight" width="400"> |
+| **Hazards** from the SDK: oil slicks and loose tyres. | **Sunset Bay's** grandstand straight at dusk. |
 
 ---
 
@@ -54,7 +56,9 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 
 ## How to play
 
-<img src="docs/images/drift.png" alt="Race screen" width="420" align="right">
+<table>
+<tr>
+<td valign="top">
 
 | Button | Action |
 |---|---|
@@ -65,14 +69,17 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 | **START** | Start a race / skip the results |
 | **◀ ▶** on the title | Choose the course |
 
+</td>
+<td valign="top" width="420"><img src="docs/images/sunset_start.png" alt="The starter waves her flag at Sunset Bay" width="400"></td>
+</tr>
+</table>
+
 - **Three laps, three rivals.** You start fourth. Wait for green.
 - **Fuel is your clock.** The gauge at the top left drains as you drive. Passing the halfway **checkpoint** and finishing each **lap** tops it up. Run dry and it's OUT OF FUEL.
 - **Stay off the walls.** The road edge scrapes off speed every time you touch it.
 - **Hazards.** On custom tracks, an **oil slick** sends you into a fishtail for about a second, and a **loose tyre** knocks off about an eighth of your speed.
 
 The [manual](seacrest_game-manual.pdf) has the full rules, driving techniques and course maps.
-
-<br clear="right">
 
 ---
 

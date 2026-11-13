@@ -53,7 +53,7 @@ td:first-child{white-space:nowrap;width:30mm}
 
 /* ---------- cover ---------- */
 .cover{background:linear-gradient(180deg,#1b2a7a 0%,#5b2c8e 30%,#c2185b 52%,#ff5a36 66%,#ffb03a 76%,#0b1438 76.2%,#0b1438 100%)}
-.cover .sun{position:absolute;left:50%;top:49mm;width:92mm;height:92mm;margin-left:-46mm;border-radius:50%;
+.cover .sun{position:absolute;left:83mm;top:49mm;width:92mm;height:92mm;margin-left:-46mm;border-radius:50%;
   background:linear-gradient(180deg,#fff27a,#ffb03a 60%,#ff7a2e);
   -webkit-mask:repeating-linear-gradient(180deg,#000 0 7mm,transparent 7mm 9mm) 0 34mm/100% 100% no-repeat,linear-gradient(#000,#000) 0 0/100% 34mm no-repeat;
   mask:repeating-linear-gradient(180deg,#000 0 7mm,transparent 7mm 9mm) 0 34mm/100% 100% no-repeat,linear-gradient(#000,#000) 0 0/100% 34mm no-repeat}
@@ -64,16 +64,22 @@ td:first-child{white-space:nowrap;width:30mm}
 .cover .kerbL{clip-path:polygon(44% 0,44.8% 0,4% 100%,0 100%)}
 .cover .kerbR{clip-path:polygon(55.2% 0,56% 0,100% 100%,96% 100%)}
 .cover .line{position:absolute;left:49.6%;width:.8%;top:162mm;bottom:0;background:repeating-linear-gradient(180deg,#ffe35a 0 4mm,transparent 4mm 9mm)}
-.cover .topline{position:absolute;top:8mm;left:10mm;right:10mm;display:flex;justify-content:space-between;font:7.5pt "Russo One";color:#fff;letter-spacing:2.2px}
-.cover .logo{position:absolute;top:19mm;left:50%;width:124mm;margin-left:-62mm}
-.cover .frame{position:absolute;left:24mm;right:24mm;top:96mm;background:#fff;padding:1.4mm;transform:rotate(-3deg);box-shadow:0 2mm 5mm rgba(0,0,0,.45)}
+.cover .topline{position:absolute;top:8mm;left:23mm;right:9mm;display:flex;justify-content:space-between;font:7.5pt "Russo One";color:#fff;letter-spacing:2.2px}
+.cover .logo{position:absolute;top:19mm;left:24mm;width:116mm}
+.cover .frame{position:absolute;left:30mm;right:18mm;top:96mm;background:#fff;padding:1.4mm;transform:rotate(-3deg);box-shadow:0 2mm 5mm rgba(0,0,0,.45)}
 .cover .frame img{display:block;width:100%}
 .cover .badge{position:absolute;right:9mm;top:86mm;width:24mm;height:24mm;border-radius:50%;background:var(--red);color:#fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;font:7pt "Russo One";line-height:1.1;text-align:center;transform:rotate(10deg);box-shadow:0 0 0 .8mm #fff,0 2mm 4mm rgba(0,0,0,.4)}
 .cover .badge b{font-size:13pt}
-.cover .bottom{position:absolute;left:0;right:0;bottom:0;height:23mm;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 10mm;border-top:1.5mm solid var(--sun1)}
+.cover .bottom{position:absolute;left:0;right:0;bottom:0;height:23mm;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 9mm 0 23mm;border-top:1.5mm solid var(--sun1)}
 .cover .bottom .t{font:15pt "Racing Sans One";color:#fff;letter-spacing:.5px}
 .cover .bottom .t small{display:block;font:7pt "PlexMono";color:#9fb0e8;letter-spacing:1.5px}
+.cover .vband{position:absolute;left:0;top:0;bottom:0;width:15mm;z-index:5;background:linear-gradient(180deg,#0b1438,#16245c 55%,#0b1438);
+  box-shadow:1.2mm 0 0 #ffe35a,2.4mm 0 0 #ff9f1c,3.6mm 0 0 #c2185b;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:6mm 0 5mm}
+.cover .vband .chk{width:8mm;height:8mm;background:conic-gradient(#fff 0 25%,#000 0 50%,#fff 0 75%,#000 0) 0 0/4mm 4mm;border:.4mm solid #fff}
+.cover .vband .vt{writing-mode:vertical-rl;transform:rotate(180deg);font:23pt/1 "Racing Sans One";letter-spacing:1.5mm;
+  background:linear-gradient(90deg,#ffe35a,#ff9f1c 50%,#ff5a36);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .vband .vs{writing-mode:vertical-rl;transform:rotate(180deg);font:6.5pt "Russo One";color:#9fb0e8;letter-spacing:1.2mm}
 .cover .bottom .pfx{font:8pt "Russo One";color:var(--sun1);text-align:right;letter-spacing:1px}
 
 /* ---------- pad diagram ---------- */
@@ -101,6 +107,7 @@ td:first-child{white-space:nowrap;width:30mm}
   <div class="sun"></div>
   <div class="sea"></div>
   <div class="road"></div><div class="kerbL"></div><div class="kerbR"></div><div class="line"></div>
+  <div class="vband"><div class="chk"></div><div class="vt">SEACREST RACER</div><div class="vs">PLAYABLEFX</div></div>
   <div class="topline"><span>16-BIT ARCADE RACING</span><span>1 PLAYER</span></div>
   <img class="logo px" src="../images/logo.png" alt="Seacrest Racer">
   <div class="frame"><img class="px" src="../images/helicopter.png" alt=""></div>
@@ -203,8 +210,8 @@ td:first-child{white-space:nowrap;width:30mm}
 <section class="page">
   <div class="band"><h1>Title <span>Screen</span></h1></div>
   <div class="body">
-    <img class="shot px" src="../images/title.png" alt="">
-    <p class="cap">The title screen runs a demo lap of the selected course behind the logo.</p>
+    <img class="shot px" src="../images/sunset_title.png" alt="">
+    <p class="cap">The title screen runs a demo lap of the selected course behind the logo: here, Sunset Bay.</p>
     <h3>Choosing a course</h3>
     <p>The name between the arrows is the course you'll race. Press <span class="kbd">◀</span> or <span class="kbd">▶</span> to flip through the courses on the cartridge. The scenery and colours behind the logo change as you go, so you can see where you're headed.</p>
     <p>The standard cartridge has two courses, <b>Seacrest Coast</b> and <b>Sunset Bay</b>. A cartridge edited with the Dev Kit can hold up to four.</p>
@@ -257,8 +264,8 @@ td:first-child{white-space:nowrap;width:30mm}
     <p>Complete all the laps (three on the standard courses) before the fuel runs out. Your finishing position is locked in the moment you cross the line.</p>
     <h2>The road edge</h2>
     <p>The road is lined with kerbs and barriers. Run into the edge and you'll scrape along it, losing speed with every hit. You can't leave the road, so the fastest way round is to stay off the edges.</p>
-    <img class="shot px" src="../images/helicopter.png" alt="" style="margin-top:2mm;width:78%;margin-left:auto;margin-right:auto">
-    <p class="cap" style="text-align:center">A camera helicopter flies over at certain points on each course. It's harmless scenery.</p>
+    <img class="shot px" src="../images/sunset_grandstand.png" alt="" style="margin-top:2mm;width:78%;margin-left:auto;margin-right:auto">
+    <p class="cap" style="text-align:center">Sunset Bay's grandstand straight. A camera helicopter also flies over at certain points on each course; it's harmless scenery.</p>
   </div>
   <div class="foot"><span>SEACREST RACER</span><span class="n">7</span></div>
 </section>
@@ -272,7 +279,7 @@ td:first-child{white-space:nowrap;width:30mm}
         <h2>The drift</h2>
         <p>Above half speed, hold <span class="kbd r">B</span> and steer into a bend. The tail swings out, the tyres squeal and smoke, and the car turns much faster than steering alone. Let go of B as the bend straightens to keep your speed.</p>
       </div>
-      <img class="shot px" src="../images/skidmarks.png" alt="">
+      <img class="shot px" src="../images/sunset_drift.png" alt="">
     </div>
     <h2 style="margin-top:4mm">Racing line</h2>
     <p>Bends show up early on the horizon. Move to the outside before the bend, cut to the inside through it, and let the car drift back out on the exit. Smooth steering keeps more speed than sawing at the pad.</p>
