@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Seacrest Racer Instruction Manual</title>
+<!-- Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com. PolyForm Noncommercial License 1.0.0.
+     Printed to PDF by docs/manual/build_manual.js. Typefaces (SIL OFL): Racing Sans One, Russo One, IBM Plex Sans/Mono. -->
+<style>
+@font-face{font-family:"Racing Sans One";src:url(fonts/racing-sans-one-latin-400-normal.woff2)}
+@font-face{font-family:"Russo One";src:url(fonts/russo-one-latin-400-normal.woff2)}
+@font-face{font-family:"Plex";font-weight:400;src:url(fonts/ibm-plex-sans-latin-400-normal.woff2)}
+@font-face{font-family:"Plex";font-weight:600;src:url(fonts/ibm-plex-sans-latin-600-normal.woff2)}
+@font-face{font-family:"Plex";font-weight:400;font-style:italic;src:url(fonts/ibm-plex-sans-latin-400-italic.woff2)}
+@font-face{font-family:"PlexMono";src:url(fonts/ibm-plex-mono-latin-500-normal.woff2)}
+@page{size:148mm 210mm;margin:0}
+:root{--navy:#0b1438;--navy2:#16245c;--red:#d82424;--sun1:#ffe35a;--sun2:#ff9f1c;--sun3:#ff5a36;--sun4:#c2185b;--ink:#141a2e;--paper:#fbf8f1;--muted:#5b6380}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font:9.2pt/1.42 "Plex",sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:148mm;height:210mm;position:relative;overflow:hidden;page-break-after:always;background:var(--paper)}
+.page:last-child{page-break-after:auto}
+img.px{image-rendering:pixelated}
+
+/* ---------- interior chrome ---------- */
+.band{position:absolute;inset:0 0 auto 0;height:17mm;background:var(--navy);display:flex;align-items:flex-end;padding:0 10mm 3mm}
+.band::after{content:"";position:absolute;left:0;right:0;bottom:-2.4mm;height:2.4mm;
+  background:repeating-linear-gradient(90deg,var(--red) 0 6mm,#fff 6mm 12mm)}
+.band h1{font:23pt/1 "Russo One";font-style:italic;color:#fff;margin:0;letter-spacing:.3px;transform:skewX(-8deg)}
+.band h1 span{color:var(--sun1)}
+.body{position:absolute;inset:24mm 10mm 14mm 10mm}
+.foot{position:absolute;left:10mm;right:10mm;bottom:6mm;display:flex;justify-content:space-between;align-items:center;font:7pt "PlexMono";color:var(--muted)}
+.foot .n{background:var(--navy);color:#fff;font:9pt "Russo One";padding:1mm 2.6mm;transform:skewX(-10deg)}
+h2{font:12.5pt/1.1 "Russo One";font-style:italic;color:var(--navy);margin:0 0 2mm;display:flex;align-items:center;gap:2mm}
+h2::before{content:"";width:3.2mm;height:3.2mm;background:var(--red);transform:skewX(-14deg);flex:none}
+h3{font:9.5pt "Russo One";color:var(--red);margin:3mm 0 1mm;text-transform:uppercase;letter-spacing:.6px}
+p{margin:0 0 2.2mm}
+ul,ol{margin:0 0 2.2mm;padding-left:4.5mm}
+li{margin-bottom:1mm}
+.shot{display:block;width:100%;border:1.2mm solid var(--navy);border-radius:1.2mm}
+.cap{font:7.4pt "Plex";font-style:italic;color:var(--muted);margin-top:1mm}
+.tip{background:var(--navy);color:#fff;border-radius:1.5mm;padding:2.6mm 3mm;margin-top:2mm;position:relative}
+.tip b{color:var(--sun1);font:8.5pt "Russo One";letter-spacing:.5px;display:block;margin-bottom:.6mm}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.kbd{display:inline-block;min-width:5mm;text-align:center;font:7.6pt "Russo One";color:#fff;background:var(--navy);border-radius:1mm;padding:.2mm 1.2mm}
+.kbd.r{background:var(--red)}
+table{border-collapse:collapse;width:100%;font-size:8.6pt}
+td{padding:1.4mm 1.5mm;border-bottom:.25mm solid #d8d2c2;vertical-align:top}
+td:first-child{white-space:nowrap;width:30mm}
+.num{display:inline-flex;align-items:center;justify-content:center;width:4.6mm;height:4.6mm;border-radius:50%;background:var(--red);color:#fff;font:7.5pt "Russo One";flex:none}
+.legend{display:grid;grid-template-columns:auto 1fr;gap:1.3mm 2mm;align-items:start;margin-top:3mm}
+.callwrap{position:relative}
+.callwrap .num{position:absolute;box-shadow:0 0 0 .5mm #fff}
+
+/* ---------- cover ---------- */
+.cover{background:linear-gradient(180deg,#1b2a7a 0%,#5b2c8e 30%,#c2185b 52%,#ff5a36 66%,#ffb03a 76%,#0b1438 76.2%,#0b1438 100%)}
+.cover .sun{position:absolute;left:50%;top:49mm;width:92mm;height:92mm;margin-left:-46mm;border-radius:50%;
+  background:linear-gradient(180deg,#fff27a,#ffb03a 60%,#ff7a2e);
+  -webkit-mask:repeating-linear-gradient(180deg,#000 0 7mm,transparent 7mm 9mm) 0 34mm/100% 100% no-repeat,linear-gradient(#000,#000) 0 0/100% 34mm no-repeat;
+  mask:repeating-linear-gradient(180deg,#000 0 7mm,transparent 7mm 9mm) 0 34mm/100% 100% no-repeat,linear-gradient(#000,#000) 0 0/100% 34mm no-repeat}
+.cover .sea{position:absolute;left:0;right:0;top:139mm;height:21mm;background:repeating-linear-gradient(180deg,#0e2f86 0 1.6mm,#1b4fbf 1.6mm 3mm)}
+.cover .road{position:absolute;left:0;right:0;top:159.6mm;bottom:0;background:#2a2f45;clip-path:polygon(44% 0,56% 0,100% 100%,0 100%)}
+.cover .kerbL,.cover .kerbR{position:absolute;top:159.6mm;bottom:0;width:100%;
+  background:repeating-linear-gradient(180deg,var(--red) 0 3mm,#fff 3mm 6mm)}
+.cover .kerbL{clip-path:polygon(44% 0,44.8% 0,4% 100%,0 100%)}
+.cover .kerbR{clip-path:polygon(55.2% 0,56% 0,100% 100%,96% 100%)}
+.cover .line{position:absolute;left:49.6%;width:.8%;top:162mm;bottom:0;background:repeating-linear-gradient(180deg,#ffe35a 0 4mm,transparent 4mm 9mm)}
+.cover .topline{position:absolute;top:8mm;left:10mm;right:10mm;display:flex;justify-content:space-between;font:7.5pt "Russo One";color:#fff;letter-spacing:2.2px}
+.cover .logo{position:absolute;top:19mm;left:50%;width:124mm;margin-left:-62mm}
+.cover .frame{position:absolute;left:24mm;right:24mm;top:96mm;background:#fff;padding:1.4mm;transform:rotate(-3deg);box-shadow:0 2mm 5mm rgba(0,0,0,.45)}
+.cover .frame img{display:block;width:100%}
+.cover .badge{position:absolute;right:9mm;top:86mm;width:24mm;height:24mm;border-radius:50%;background:var(--red);color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;font:7pt "Russo One";line-height:1.1;text-align:center;transform:rotate(10deg);box-shadow:0 0 0 .8mm #fff,0 2mm 4mm rgba(0,0,0,.4)}
+.cover .badge b{font-size:13pt}
+.cover .bottom{position:absolute;left:0;right:0;bottom:0;height:23mm;background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:0 10mm;border-top:1.5mm solid var(--sun1)}
+.cover .bottom .t{font:15pt "Racing Sans One";color:#fff;letter-spacing:.5px}
+.cover .bottom .t small{display:block;font:7pt "PlexMono";color:#9fb0e8;letter-spacing:1.5px}
+.cover .bottom .pfx{font:8pt "Russo One";color:var(--sun1);text-align:right;letter-spacing:1px}
+
+/* ---------- pad diagram ---------- */
+.pad{width:100%;height:auto}
+.toc{list-style:none;padding:0;margin:0;columns:1}
+.toc li{display:flex;gap:2mm;align-items:baseline;border-bottom:.25mm dotted #b9b2a0;padding:1.2mm 0;margin:0}
+.toc li span:last-child{margin-left:auto;font:8pt "PlexMono";color:var(--muted)}
+.map{background:var(--navy);border-radius:2mm;padding:3mm;color:#fff}
+.map h3{color:var(--sun1);margin:0 0 1.5mm}
+.map svg{width:100%;height:42mm;display:block}
+.stats{display:flex;gap:3mm;font:7.4pt "PlexMono";color:#c7d0f5;margin-top:1.5mm;flex-wrap:wrap}
+.back{background:var(--navy);color:#dfe5ff}
+.back .body{inset:14mm 10mm 12mm}
+.back h2{color:#fff}
+.back h2::before{background:var(--sun2)}
+.back p,.back li{color:#c9d1f2}
+.back a{color:var(--sun1);text-decoration:none}
+.notice{border:.3mm solid #3a4a8a;border-radius:1.5mm;padding:2.6mm 3mm;font:7.6pt/1.45 "PlexMono";color:#e6ebff;margin:2mm 0 3mm}
+</style>
+</head>
+<body>
+
+<!-- ====================== 1 COVER ====================== -->
+<section class="page cover">
+  <div class="sun"></div>
+  <div class="sea"></div>
+  <div class="road"></div><div class="kerbL"></div><div class="kerbR"></div><div class="line"></div>
+  <div class="topline"><span>16-BIT ARCADE RACING</span><span>1 PLAYER</span></div>
+  <img class="logo px" src="../images/logo.png" alt="Seacrest Racer">
+  <div class="frame"><img class="px" src="../images/helicopter.png" alt=""></div>
+  <div class="badge"><b>3D</b>POLYGON<br>CAR</div>
+  <div class="bottom">
+    <div class="t">Instruction Manual<small>CARTRIDGE ROM · EMULATOR · FLASH CART</small></div>
+    <div class="pfx">PLAYABLEFX<br>2026</div>
+  </div>
+</section>
+
+<!-- ====================== 2 WELCOME ====================== -->
+<section class="page">
+  <div class="band"><h1>Welcome to <span>Seacrest</span></h1></div>
+  <div class="body">
+    <p>The coast road is closed, the grandstands are full and the starter is already on the line with her flag. You have one red car, a tank of fuel and three laps to beat the field.</p>
+    <p><b>Seacrest Racer</b> is an arcade racer for 16-bit home consoles. The road rushes at you in pseudo-3D, palms and sailboats sweep past, a helicopter shadows the leaders, and your car is a real polygon model, redrawn by the console itself every time you start the game.</p>
+    <div class="tip"><b>BEFORE YOU START</b>Read pages 3 and 4. They take two minutes and cover everything you need to get on the road.</div>
+    <h3 style="margin-top:6mm">Contents</h3>
+    <ul class="toc">
+      <li><span>Getting started</span><span>3</span></li>
+      <li><span>Controls</span><span>4</span></li>
+      <li><span>Title screen and track select</span><span>5</span></li>
+      <li><span>The race screen</span><span>6</span></li>
+      <li><span>Rules of the race</span><span>7</span></li>
+      <li><span>Driving techniques</span><span>8</span></li>
+      <li><span>The courses</span><span>9</span></li>
+      <li><span>The Dev Kit: build your own tracks</span><span>10</span></li>
+      <li><span>Dev Kit: what you can change</span><span>11</span></li>
+      <li><span>Credits and license</span><span>12</span></li>
+    </ul>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">2</span></div>
+</section>
+
+<!-- ====================== 3 GETTING STARTED ====================== -->
+<section class="page">
+  <div class="band"><h1>Getting <span>Started</span></h1></div>
+  <div class="body">
+    <p>Seacrest Racer is a standard 256 KB cartridge ROM file called <b>seacrest_racer.md</b>. It runs in any accurate emulator, and is built to run on original 16-bit Sega hardware through a flash cartridge (real-console testing is still to come, so please report what you find).</p>
+    <h3>On an emulator</h3>
+    <ol>
+      <li>Install an emulator with good accuracy, for example Genesis Plus GX (also available as a RetroArch core), BlastEm or Kega Fusion.</li>
+      <li>Choose <i>Load ROM</i> and pick <b>seacrest_racer.md</b>.</li>
+      <li>Map the A, B, C and Start buttons to your keyboard or pad.</li>
+    </ol>
+    <h3>On real hardware</h3>
+    <ol>
+      <li>Copy <b>seacrest_racer.md</b> to the SD card of your flash cartridge (Mega EverDrive, Mega Drive Pro and similar).</li>
+      <li>Insert the cartridge, switch the console on and pick the file from the menu.</li>
+    </ol>
+    <h3>Handling</h3>
+    <ul>
+      <li>Use a 3-button or 6-button control pad in port 1.</li>
+      <li>Take a break every hour, and stop playing if you feel dizzy or unwell. A small number of people can react to flashing images.</li>
+    </ul>
+    <div class="tip"><b>CUSTOM TRACKS</b>Tracks made with the Dev Kit come out as a new .md file. Load it exactly the same way; nothing needs installing.</div>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">3</span></div>
+</section>
+
+<!-- ====================== 4 CONTROLS ====================== -->
+<section class="page">
+  <div class="band"><h1>Con<span>trols</span></h1></div>
+  <div class="body">
+    <svg class="pad" viewBox="0 0 400 190" aria-label="control pad">
+      <rect x="20" y="30" width="360" height="130" rx="62" fill="#1b2140"/>
+      <rect x="26" y="36" width="348" height="118" rx="56" fill="#2b3360"/>
+      <g transform="translate(105 95)" fill="#0f1430">
+        <rect x="-14" y="-42" width="28" height="84" rx="5"/><rect x="-42" y="-14" width="84" height="28" rx="5"/>
+        <circle r="9" fill="#2b3360"/>
+      </g>
+      <rect x="176" y="112" width="48" height="14" rx="7" fill="#0f1430"/>
+      <g font-family="Russo One" font-size="17" text-anchor="middle" fill="#fff">
+        <circle cx="262" cy="95" r="19" fill="#d82424"/><text x="262" y="101">A</text>
+        <circle cx="306" cy="95" r="19" fill="#d82424"/><text x="306" y="101">B</text>
+        <circle cx="350" cy="95" r="19" fill="#d82424"/><text x="350" y="101">C</text>
+      </g>
+      <g font-family="Plex" font-size="12.5" fill="#141a2e">
+        <text x="105" y="20" text-anchor="middle">D-PAD  steer left / right</text>
+        <text x="200" y="182" text-anchor="middle">START</text>
+        <text x="262" y="20" text-anchor="middle">gas</text>
+        <text x="306" y="20" text-anchor="middle">brake</text>
+        <text x="350" y="20" text-anchor="middle">gas</text>
+      </g>
+    </svg>
+    <table style="margin-top:3mm">
+      <tr><td><span class="kbd">◀</span> <span class="kbd">▶</span></td><td>Steer. The longer you hold, the harder the car turns.</td></tr>
+      <tr><td><span class="kbd r">A</span> or <span class="kbd r">C</span></td><td>Accelerate. The 5-speed gearbox shifts by itself.</td></tr>
+      <tr><td><span class="kbd r">B</span></td><td>Brake.</td></tr>
+      <tr><td><span class="kbd r">B</span> + <span class="kbd">◀</span>/<span class="kbd">▶</span></td><td>Drift: brake and steer together above half speed to swing the tail out and turn tighter.</td></tr>
+      <tr><td><span class="kbd">START</span></td><td>Start a race from the title screen; skip the results screen.</td></tr>
+      <tr><td><span class="kbd">◀</span> <span class="kbd">▶</span> on title</td><td>Choose the course.</td></tr>
+    </table>
+    <div class="tip"><b>HOLD THE GAS AT THE LIGHTS</b>You can rev the engine on the grid while the lights count down. Floor it on green.</div>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">4</span></div>
+</section>
+
+<!-- ====================== 5 TITLE ====================== -->
+<section class="page">
+  <div class="band"><h1>Title <span>Screen</span></h1></div>
+  <div class="body">
+    <img class="shot px" src="../images/title.png" alt="">
+    <p class="cap">The title screen runs a demo lap of the selected course behind the logo.</p>
+    <h3>Choosing a course</h3>
+    <p>The name between the arrows is the course you'll race. Press <span class="kbd">◀</span> or <span class="kbd">▶</span> to flip through the courses on the cartridge. The scenery and colours behind the logo change as you go, so you can see where you're headed.</p>
+    <p>The standard cartridge has two courses, <b>Seacrest Coast</b> and <b>Sunset Bay</b>. A cartridge edited with the Dev Kit can hold up to four.</p>
+    <h3>Starting</h3>
+    <p>Press <span class="kbd">START</span>. The field lines up on the grid, the starter raises her flag and the lights run red, amber, green.</p>
+    <img class="shot px" src="../images/start.png" alt="" style="margin-top:2mm">
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">5</span></div>
+</section>
+
+<!-- ====================== 6 RACE SCREEN ====================== -->
+<section class="page">
+  <div class="band"><h1>The Race <span>Screen</span></h1></div>
+  <div class="body">
+    <div class="callwrap">
+      <img class="shot px" src="../images/drift.png" alt="">
+      <span class="num" style="left:5%;top:5%">1</span>
+      <span class="num" style="left:42%;top:5%">2</span>
+      <span class="num" style="left:79%;top:5%">3</span>
+      <span class="num" style="left:58%;top:83%">4</span>
+      <span class="num" style="left:91%;top:70%">5</span>
+    </div>
+    <div class="legend">
+      <span class="num">1</span><div><b>Fuel gauge.</b> Your time limit. The bar drains steadily; when it's empty the race is over. Checkpoints and laps top it up.</div>
+      <span class="num">2</span><div><b>Lap.</b> Current lap out of the total for this course.</div>
+      <span class="num">3</span><div><b>Position.</b> Where you are in the four-car field.</div>
+      <span class="num">4</span><div><b>Digital speed</b> in km/h.</div>
+      <span class="num">5</span><div><b>Speedometer.</b> The needle shows the same speed at a glance; the red zone is near top speed.</div>
+    </div>
+    <h3>Messages</h3>
+    <table>
+      <tr><td>CHECKPOINT</td><td>You passed the halfway checkpoint and got extra fuel.</td></tr>
+      <tr><td>REFUEL!</td><td>Lap completed, fuel added.</td></tr>
+      <tr><td>FINAL LAP</td><td>One more to go.</td></tr>
+      <tr><td>FINISH! / OUT OF FUEL</td><td>Race over. Press START to return to the title.</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">6</span></div>
+</section>
+
+<!-- ====================== 7 RULES ====================== -->
+<section class="page">
+  <div class="band"><h1>Rules of the <span>Race</span></h1></div>
+  <div class="body">
+    <h2>The start</h2>
+    <p>You start fourth, behind one blue and two yellow rivals. Wait for green: the race begins when the light changes and "GO!" appears.</p>
+    <h2>Fuel is your clock</h2>
+    <p>There's no countdown timer. Instead you race against your fuel gauge. Each course sets how much fuel you start with and how much you get back at the checkpoint and at the end of each lap. Drive cleanly and there's plenty; lose time in the walls and it gets tight.</p>
+    <h2>Laps and finishing</h2>
+    <p>Complete all the laps (three on the standard courses) before the fuel runs out. Your finishing position is locked in the moment you cross the line.</p>
+    <h2>The road edge</h2>
+    <p>The road is lined with kerbs and barriers. Run into the edge and you'll scrape along it, losing speed with every hit. You can't leave the road, so the fastest way round is to stay off the edges.</p>
+    <img class="shot px" src="../images/helicopter.png" alt="" style="margin-top:2mm;width:78%;margin-left:auto;margin-right:auto">
+    <p class="cap" style="text-align:center">A camera helicopter flies over at certain points on each course. It's harmless scenery.</p>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">7</span></div>
+</section>
+
+<!-- ====================== 8 TECHNIQUES ====================== -->
+<section class="page">
+  <div class="band"><h1>Driving <span>Techniques</span></h1></div>
+  <div class="body">
+    <div class="two">
+      <div>
+        <h2>The drift</h2>
+        <p>Above half speed, hold <span class="kbd r">B</span> and steer into a bend. The tail swings out, the tyres squeal and smoke, and the car turns much faster than steering alone. Let go of B as the bend straightens to keep your speed.</p>
+      </div>
+      <img class="shot px" src="../images/skidmarks.png" alt="">
+    </div>
+    <h2 style="margin-top:4mm">Racing line</h2>
+    <p>Bends show up early on the horizon. Move to the outside before the bend, cut to the inside through it, and let the car drift back out on the exit. Smooth steering keeps more speed than sawing at the pad.</p>
+    <h2>Road hazards</h2>
+    <div class="two">
+      <img class="shot px" src="../images/hazards.png" alt="">
+      <div>
+        <p><b>Oil slick.</b> Drive over one and the car fishtails for about a second. Steering barely responds until it grips again, so steer around slicks if you can.</p>
+        <p><b>Loose tyre.</b> Hitting a tyre lying in the road knocks off about an eighth of your speed.</p>
+        <p style="font-size:8pt;color:var(--muted)">The standard courses have no hazards. They appear on courses built with the Dev Kit.</p>
+      </div>
+    </div>
+    <div class="tip"><b>OVERTAKING</b>Rivals hold their lanes and speed up on the straights. Pass them in the bends, where a good drift gains the most.</div>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">8</span></div>
+</section>
+
+<!-- ====================== 9 COURSES ====================== -->
+<section class="page">
+  <div class="band"><h1>The <span>Courses</span></h1></div>
+  <div class="body" id="courses">
+    <div class="map" style="margin-bottom:4mm">
+      <h3>Seacrest Coast</h3>
+      <svg id="map1" viewBox="0 0 200 200"></svg>
+      <p style="margin:1.5mm 0 0;font-size:8.2pt;color:#dfe5ff">A beach road between palms and the open sea. Long sweepers, two flyovers by the camera helicopter, billboards and a grid lined with cones.</p>
+      <div class="stats" id="st1"></div>
+    </div>
+    <div class="map">
+      <h3>Sunset Bay</h3>
+      <svg id="map2" viewBox="0 0 200 200"></svg>
+      <p style="margin:1.5mm 0 0;font-size:8.2pt;color:#dfe5ff">A shorter, twistier evening circuit under street lamps, with rocks along the shore and grandstands at the start.</p>
+      <div class="stats" id="st2"></div>
+    </div>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">9</span></div>
+</section>
+
+<!-- ====================== 10 DEV KIT ====================== -->
+<section class="page">
+  <div class="band"><h1>The <span>Dev Kit</span></h1></div>
+  <div class="body">
+    <p>Seacrest Racer comes with a <b>no-code software development kit</b>: a track editor and a car editor in a single web page. Open <b>seacrest_devkit.html</b> in Chrome, Firefox or Edge (no internet needed), change what you like and press <b>Save ROM</b>. You get a new cartridge file that runs on emulators and real hardware. Nothing to compile.</p>
+    <img class="shot" src="../images/devkit_track.png" alt="">
+    <p class="cap">The track editor: driver's-view preview, course map, settings, colours and the course strip.</p>
+    <h3>Make a track in five steps</h3>
+    <ol>
+      <li><b>Open ROM…</b> or start from the built-in cartridge.</li>
+      <li>Pick a track tab, or press <b>Duplicate</b> or <b>New blank</b> (up to four tracks).</li>
+      <li>Draw bends on the strip: drag up for right-handers, down for left-handers.</li>
+      <li>Choose an object type and click the lower strip to place palms, boats, oil slicks and more.</li>
+      <li>Press <b>▶ Drive</b> to preview, check the <b>Checks</b> panel, then <b>Save ROM</b>.</li>
+    </ol>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">10</span></div>
+</section>
+
+<!-- ====================== 11 DEV KIT 2 ====================== -->
+<section class="page">
+  <div class="band"><h1>Dev Kit: <span>What You Can Change</span></h1></div>
+  <div class="body">
+    <img class="shot" src="../images/devkit_car.png" alt="" style="height:58mm;object-fit:cover;object-position:top left">
+    <p class="cap">The car editor: in-game view, the console's 120×64 sprite box, and a 3D model you can turn and reshape.</p>
+    <table style="margin-top:2mm">
+      <tr><td>Courses</td><td>Name, length, laps, bends, fuel, checkpoint, helicopter timing</td></tr>
+      <tr><td>Colours</td><td>Sea, sand, grass, road, kerbs, sky, hills, sun, palms (all limited to the console's 512 colours)</td></tr>
+      <tr><td>Scenery</td><td>Palms, sailboats, billboards, lamps, cones, grandstands, rocks, shrubs, umbrellas, tyre walls, oil drums, flag girl</td></tr>
+      <tr><td>Hazards</td><td>Oil slicks and loose tyres</td></tr>
+      <tr><td>Your car</td><td>Shape (sliders or by moving points), paint, rival paint, top speed, acceleration, steering, drift, brakes, grip</td></tr>
+    </table>
+    <h3>Console limits the Dev Kit checks for you</h3>
+    <ul>
+      <li>128 objects per course; about 25 drawn at once.</li>
+      <li>Each kind of object uses video memory (276 tiles per course), so palms plus grandstands leave little room for anything else.</li>
+      <li>The car must fit a 120×64 pixel box, with at most 128 points and 96 faces.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>SEACREST RACER</span><span class="n">11</span></div>
+</section>
+
+<!-- ====================== 12 BACK ====================== -->
+<section class="page back">
+  <div class="body">
+    <img class="px" src="../images/logo.png" alt="Seacrest Racer" style="width:84mm;display:block;margin:0 auto 5mm">
+    <h2>Credits</h2>
+    <p>Design, code, art, music and Dev Kit: <b style="color:#fff">Fernand G.</b> / PlayableFX.com, built with Claude.<br>
+    Logo lettering set in Racing Sans One and Russo One; this manual in IBM Plex. All are open-licensed typefaces (SIL Open Font License).</p>
+    <h2 style="margin-top:4mm">License</h2>
+    <p>Seacrest Racer and the Seacrest Racer Dev Kit are licensed under the <b style="color:#fff">PolyForm Noncommercial License 1.0.0</b>.</p>
+    <div class="notice">Required Notice: Copyright 2026 Fernand G. / PlayableFX.com (https://playablefx.com)</div>
+    <ul>
+      <li>Play it, copy it, share it, modify it and build new tracks and games on it, for any noncommercial purpose.</li>
+      <li>Anything you pass on, changed or not, must include the license and the Required Notice line above.</li>
+      <li>Selling it, or using it in a commercial product or service, needs written permission from the author.</li>
+    </ul>
+    <p style="margin-top:4mm;font-size:7.6pt;color:#8f9bd0">Seacrest Racer is an independent fan homage to 1990s arcade racers and is not affiliated with, endorsed by or connected to Sega, Bandai Namco or any other publisher. Sega, Genesis and Mega Drive are trademarks of Sega Corporation.</p>
+    <p style="font:7.6pt 'PlexMono';color:#8f9bd0;margin-top:4mm">github.com/renderedsheep/seacrest-racer</p>
+  </div>
+</section>
+
+<script>
+/* draws the two course maps from maps.json (written by build_manual.js before printing) */
+const M = window.MAPS;
+[["SEACREST COAST", "map1", "st1"], ["SUNSET BAY", "map2", "st2"]].forEach(([k, id, st]) => {
+  const m = M[k], svg = document.getElementById(id);
+  svg.setAttribute("viewBox", `0 0 ${m.w} ${m.h}`);
+  svg.innerHTML = `<path d="${m.d}" fill="none" stroke="#2b3a7a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="${m.d}" fill="none" stroke="#ffe35a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${m.cp[0]}" cy="${m.cp[1]}" r="4" fill="#ff9f1c"/>
+    <rect x="${m.start[0] - 6}" y="${m.start[1] - 2.5}" width="12" height="5" fill="#fff"/>
+    <rect x="${m.start[0] - 6}" y="${m.start[1] - 2.5}" width="3" height="2.5" fill="#000"/><rect x="${m.start[0]}" y="${m.start[1] - 2.5}" width="3" height="2.5" fill="#000"/>
+    <rect x="${m.start[0] - 3}" y="${m.start[1]}" width="3" height="2.5" fill="#000"/><rect x="${m.start[0] + 3}" y="${m.start[1]}" width="3" height="2.5" fill="#000"/>
+    <circle cx="${m.end[0]}" cy="${m.end[1]}" r="2.5" fill="#d82424"/>`;
+  document.getElementById(st).innerHTML = `<span>LENGTH ${m.segs} SEGMENTS</span><span>LAPS ${m.laps}</span><span>START FUEL ${m.fuel} s</span><span>FLAT-OUT LAP ~${m.lap} s</span><span>● CHECKPOINT</span>`;
+});
+</script>
+</body>
+</html>
