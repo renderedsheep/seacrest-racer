@@ -188,6 +188,13 @@ docs/images/              README images
 
 ## License and credits
 
+<a href="https://playablefx.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/playablefx.png">
+    <img src="docs/images/playablefx_dark.png" alt="PlayableFX" height="64">
+  </picture>
+</a>
+
 **© 2026 Fernand G. / [PlayableFX.com](https://playablefx.com)**
 
 Licensed under the **[PolyForm Noncommercial License 1.0.0](LICENSE.md)**:
