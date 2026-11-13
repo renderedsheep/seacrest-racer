@@ -35,6 +35,7 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 - [Download and play](#download-and-play)
 - [How to play](#how-to-play)
 - [The no-code SDK](#the-no-code-sdk)
+- [Box art](#box-art)
 - [Building from source](#building-from-source)
 - [How it works](#how-it-works)
 - [Repository layout](#repository-layout)
@@ -49,6 +50,7 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 | [`dist/seacrest_racer.md`](dist/seacrest_racer.md) | The game: a 256 KB cartridge ROM |
 | [`dist/seacrest_devkit.html`](dist/seacrest_devkit.html) | The no-code SDK (track and car editor) |
 | [`seacrest_game-manual.pdf`](seacrest_game-manual.pdf) | The 12-page instruction manual |
+| [`seacrest_box-cover.pdf`](seacrest_box-cover.pdf) | Printable box cover insert ([see below](#box-art)) |
 
 **In an emulator:** load `seacrest_racer.md` in any accurate emulator. It's tested in **Genesis Plus GX**, which is also the RetroArch / RetroPie core `lr-genesis-plus-gx`. BlastEm and Kega Fusion should work too.
 
@@ -133,6 +135,23 @@ The Seacrest Racer Dev Kit is a **no-code software development kit**. It's one s
 
 Some changes still need a rebuild from source: new kinds of object (new art), the rival car shape (rivals are pre-drawn sprites), more than four tracks, HUD colours and music.
 
+## Box art
+
+<p align="center">
+  <img src="docs/images/box_cover.png" alt="Seacrest Racer box cover: back, spine and front" width="100%">
+</p>
+
+A wraparound cover insert (back, spine and front) for a 16-bit cartridge clamshell case is in [`seacrest_box-cover.pdf`](seacrest_box-cover.pdf), with a 300 dpi image in [`seacrest_box-cover.png`](seacrest_box-cover.png).
+
+1. **Measure your case first.** Open it and measure the clear sleeve the cover slides into: the height, the width of the front panel and the width of the spine, in millimetres.
+2. If your numbers differ from the default (211 mm tall, 147 mm front and back, 27 mm spine), rebuild the cover at your size:
+   ```sh
+   node docs/manual/build_manual.js        # once, to fetch the fonts
+   node docs/box/build_box.js --height 211 --front 147 --spine 27
+   ```
+3. Print the PDF at **100% / "actual size"** (not "fit to page") on glossy photo paper. At the default size the cover is about 12.6 × 8.3 inches, so it needs **legal (8.5 × 14 in)** paper or bigger. Letter-size paper is too small.
+4. Cut on the outside trim marks and slide the cover into the sleeve. The coloured stripes mark the spine edges for folding.
+
 ---
 
 ## Building from source
@@ -183,6 +202,8 @@ tools/art/                logo and credit art
 editor/                   SDK page source (devkit.src.html)
 docs/data_format.md       the editable ROM data block, byte by byte
 docs/manual/              manual source and PDF builder
+docs/box/                 box cover source and PDF builder
+seacrest_box-cover.pdf    printable box cover insert
 docs/images/              README images
 ```
 
