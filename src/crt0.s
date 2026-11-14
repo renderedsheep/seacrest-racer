@@ -1,4 +1,4 @@
-| Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+| Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 | Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 | SEACREST RACER - startup, interrupt handlers and runtime helpers (68000, gas syntax)
 	.section .vectors,"ax"
@@ -31,7 +31,7 @@
 	.long	0x00FF0000, 0x00FFFFFF
 	.ascii	"            "
 	.ascii	"            "
-	.ascii	"(C)2026 FERNAND G. / PLAYABLEFX.COM     "
+	.ascii	"(C)2026 FERNAND GOUVEIA / PLAYABLEFX.COM"
 	.ascii	"JUE             "
 
 	.text

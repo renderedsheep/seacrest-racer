@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+# Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 # Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 """Builds the default editable data block (see docs/data_format.md): tracks + car.
 The editors read and rewrite exactly this layout inside the ROM."""

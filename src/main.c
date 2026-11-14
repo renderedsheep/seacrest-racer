@@ -1,4 +1,4 @@
-/* Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+/* Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
  * Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE). */
 /* SEACREST RACER - arcade racer demo for Sega Genesis / Mega Drive.
  * Road: per-line scrolled plane (fake 3D). Player car: flat-shaded polygons
@@ -900,7 +900,7 @@ static void build_frame(void) {
     }
     if (state == ST_TITLE) {
         spr_frame(FR_LOGO, 160, 28, 3, 0);
-        spr_frame(FR_CREDIT, 4 + CREDIT_W / 2, 214, 3, 0);
+        spr_frame(FR_CREDIT, 4 + CREDIT_W / 2, 206, 3, 0);      /* two lines: name, then studio */
         {
             u8 len = 0; while (track_name[len]) len++;
             s16 tx = 160 - len * 4;

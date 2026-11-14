@@ -1,4 +1,4 @@
-# Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+# Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 # Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 """Flag girl: original hand-placed pixel art (palette 2).
 Letters: . clear, k black(8), g grey(9), w white(12), s skin(11), S skin shade(13), h hair(15),

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+# Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 # Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 """Asset generator for SEACREST RACER (Genesis). Produces tiles, maps, sprite frames,
 palettes and model tables. All art is original and generated procedurally."""

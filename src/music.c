@@ -1,4 +1,4 @@
-/* Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+/* Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
  * Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE). */
 /* 68000-side sound driver: YM2612 FM + SN76489 PSG, ticked from V-int.
  * The Z80 is parked (bus held), so the 68000 writes the FM chip directly. */

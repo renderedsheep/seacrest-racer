@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+# Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 # Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 """Draws the Seacrest Racer title logo and the credit strip as indexed PNGs (tools/art/).
 Only needs re-running to change the logo; ./build.sh uses the PNGs it wrote.
@@ -75,26 +75,20 @@ def logo():
         d.line([(bx0 + x0, y), (bx0 + x1 - k * 2, y)], fill=g(7, 7, 7) if k != 1 else g(6, 0, 0), width=2)
     return img.crop(img.getbbox())
 
-def credit(text):
-    """credit line in the game's own 5x7 font, white with a navy shadow; adds a (c) glyph"""
+def credit(*lines):
+    """credit lines in the game's own 5x7 font, white with a navy shadow; '@' draws a (c) sign.
+    Each line is 8 pixels tall, so every line costs exactly one row of tiles."""
     glyphs = dict(font5x7.GLYPHS)
     glyphs['@'] = [" ### ", "#   #", "# ###", "# #  ", "# ###", "#   #", " ### "]   # copyright sign
-    W = len(text) * 6 + 2
-    img = Image.new("RGBA", (W, 8), (0, 0, 0, 0))   # 8 rows = one row of tiles
-    for i, ch in enumerate(text):
-        gl = glyphs.get(ch)
-        if not gl: continue
-        for y, row in enumerate(gl):
-            for x, c in enumerate(row):
-                if c == '#':
-                    img.putpixel((i * 6 + x + 1, y + 1), g(0, 0, 1) + (255,))
-    for i, ch in enumerate(text):
-        gl = glyphs.get(ch)
-        if not gl: continue
-        for y, row in enumerate(gl):
-            for x, c in enumerate(row):
-                if c == '#':
-                    img.putpixel((i * 6 + x, y), g(7, 7, 7) + (255,))
+    W = max(len(t) for t in lines) * 6 + 2
+    img = Image.new("RGBA", (W, 8 * len(lines)), (0, 0, 0, 0))
+    for colour, dx, dy in ((g(0, 0, 1), 1, 1), (g(7, 7, 7), 0, 0)):
+        for ln, text in enumerate(lines):
+            for i, ch in enumerate(text):
+                for y, row in enumerate(glyphs.get(ch) or []):
+                    for x, c in enumerate(row):
+                        if c == '#':
+                            img.putpixel((i * 6 + x + dx, ln * 8 + y + dy), colour + (255,))
     return img
 
 def to_indexed(img):
@@ -113,5 +107,5 @@ def to_indexed(img):
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     lg = to_indexed(logo()); lg.save(os.path.join(OUT, "logo.png"), transparency=0)
-    cr = to_indexed(credit("@ 2026 FERNAND G. / PLAYABLEFX.COM")); cr.save(os.path.join(OUT, "credit.png"), transparency=0)
+    cr = to_indexed(credit("@ 2026 FERNAND GOUVEIA", "PLAYABLEFX.COM")); cr.save(os.path.join(OUT, "credit.png"), transparency=0)
     print("logo", lg.size, "credit", cr.size)

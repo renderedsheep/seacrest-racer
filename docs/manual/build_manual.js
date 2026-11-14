@@ -1,4 +1,4 @@
-// Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+// Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 // Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 //
 // Prints docs/manual/manual.html to seacrest_game-manual.pdf with headless Chromium.

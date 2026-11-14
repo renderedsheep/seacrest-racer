@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Seacrest Racer - Copyright 2026 Fernand G. / PlayableFX.com
+# Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 # Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 """Composes the original SEACREST RACER theme (150 BPM arcade techno) and emits
 patterns + FM patches as a C header for the 68000-side sound driver."""
