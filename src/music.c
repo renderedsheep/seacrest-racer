@@ -117,7 +117,7 @@ static const u8 kick_sweep[8] = { 64, 55, 49, 45, 42, 40, 38, 37 };
 /* Engine and effects, every frame:
  *  FM5  = player engine (growl, pitch from rpm, volume from throttle)
  *  PSG2 = nearest rival's engine, pitch includes Doppler shift, volume by distance
- *  PSG3 = tyre squeal / wall scrape */
+ *  PSG3 = tire squeal / wall scrape */
 static u8 eng_on;
 static void engine_sound(void) {
     eng_phase++;

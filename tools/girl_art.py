@@ -1,7 +1,7 @@
 # Seacrest Racer - Copyright 2026 Fernand Gouveia / PlayableFX.com
 # Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE).
 """Flag girl: original hand-placed pixel art (palette 2).
-Letters: . clear, k black(8), g grey(9), w white(12), s skin(11), S skin shade(13), h hair(15),
+Letters: . clear, k black(8), g gray(9), w white(12), s skin(11), S skin shade(13), h hair(15),
 1-4 jacket reds (shared with the player car body), 5-7 dark blues (shared with the car glass)."""
 from PIL import Image, ImageDraw
 

@@ -49,12 +49,12 @@ PAL1 = [(0,0,0),
 PAL2 = [(0,0,0),
         (4,0,0),(6,0,0),(7,1,1),(7,4,3),   # 1-4 red body (player car, helicopter, outfit)
         (0,1,2),(1,2,3),(2,3,5),           # 5-7 cabin glass
-        (0,0,0),(2,2,2),(7,0,0),           # 8 black 9 grey 10 tail light
+        (0,0,0),(2,2,2),(7,0,0),           # 8 black 9 gray 10 tail light
         (7,5,4),(7,7,7),(6,4,3),(0,0,0),(3,1,0)]  # 11 skin 12 white 13 skin shade 14 black 15 hair
 PAL3 = [(0,0,0),
         (4,3,0),(5,4,0),(6,5,0),(7,6,1),   # 1-4 yellow body (rivals)
         (0,1,2),(1,2,3),(2,3,5),           # 5-7 cabin
-        (0,0,0),(3,3,3),(7,0,0),           # 8 black 9 grey 10 tail
+        (0,0,0),(3,3,3),(7,0,0),           # 8 black 9 gray 10 tail
         (0,1,4),(0,2,5),(1,3,7),(3,5,7),   # 11-14 blue body
         (5,7,7)]                           # 15 heli glass
 PALS = [PAL0, PAL1, PAL2, PAL3]
@@ -371,7 +371,7 @@ def project(p, camx=0.0):
     return (160 + (x - camx) * F / z, HZ - (y - CAMH) * F / z)
 
 def render_car(zc, xoff, yaw, pal_body, ox_screen=None):
-    """Render car with ground centre at (xoff, 0, zc). Returns P image + anchor."""
+    """Render car with ground center at (xoff, 0, zc). Returns P image + anchor."""
     cs, sn = math.cos(yaw), math.sin(yaw)
     img = Image.new("P", (320, 224), 0)
     d = ImageDraw.Draw(img)
@@ -435,13 +435,13 @@ for i in range(1, 10):
     r, g_, b = _lp[i * 3:i * 3 + 3]
     lv = lambda v: min(range(8), key=lambda k: abs([0, 52, 87, 116, 144, 172, 206, 255][k] - v))
     LOGO_PAL[i] = (lv(b) << 9) | (lv(g_) << 5) | (lv(r) << 1)
-FR_LOGO = add_sprite_frame("logo", _logo, _logo.width // 2, 0, title_bank)      # centre anchor: chunk offsets are s8
+FR_LOGO = add_sprite_frame("logo", _logo, _logo.width // 2, 0, title_bank)      # center anchor: chunk offsets are s8
 FR_CREDIT = add_sprite_frame("credit", _credit, _credit.width // 2, 0, title_bank)
 LOGO_W, LOGO_H = _logo.size
 CREDIT_W = _credit.width
 
 # ---------------- roadside objects (pooled per track) ----------------
-# Each type: draw(img, s) where s = pixels per world unit, anchor at bottom centre.
+# Each type: draw(img, s) where s = pixels per world unit, anchor at bottom center.
 OTYPES = []   # dict(name, pal, height, frames[(frame_idx, z)], zmin, zmax, tiles, where)
 
 def make_type(name, pal, height, width, heights, draw, where, zmax_units=176):
@@ -493,7 +493,7 @@ def draw_boat(img, s):
     dd.polygon([(2, hull), (2 + w, hull), (2 + w - max(1, h / 8), 2 + h), (2 + max(1, h / 8), 2 + h)], fill=14)
     return mx, 2 + h
 
-def draw_billboard(img, s):          # pal0: posts grey, yellow frame, red panel, white chevrons
+def draw_billboard(img, s):          # pal0: posts gray, yellow frame, red panel, white chevrons
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -557,7 +557,7 @@ def draw_stand(img, s):              # pal0: grandstand seen from the road
     dd.rectangle([x0 + w - max(1, 0.15 * s), by - h, x0 + w, by], fill=14)
     return cx, by
 
-def draw_rock(img, s):               # pal0: grey boulder
+def draw_rock(img, s):               # pal0: gray boulder
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -572,7 +572,7 @@ def draw_rock(img, s):               # pal0: grey boulder
     return cx, by
 
 
-def draw_oil(img, s):                # pal0 locked colours: flat black pool with a dark sheen, lies on the road
+def draw_oil(img, s):                # pal0 locked colors: flat black pool with a dark sheen, lies on the road
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -585,7 +585,7 @@ def draw_oil(img, s):                # pal0 locked colours: flat black pool with
         dd.line([(cx + w * 0.15, by - h * 0.35), (cx + w * 0.32, by - h * 0.3)], fill=15)
     return cx, by
 
-def draw_tyre(img, s):               # a loose tyre standing on its tread, seen face-on
+def draw_tire(img, s):               # a loose tire standing on its tread, seen face-on
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -614,7 +614,7 @@ def draw_shrub(img, s):              # pal1: clumps in the palm greens
     dd.rectangle([cx - w * 0.42, by - max(1, 0.12 * s), cx + w * 0.42, by], fill=13)
     return cx, by
 
-def draw_tyrewall(img, s):           # trackside barrier: three stacks of tyres, white paint on top
+def draw_tirewall(img, s):           # trackside barrier: three stacks of tires, white paint on top
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -628,7 +628,7 @@ def draw_tyrewall(img, s):           # trackside barrier: three stacks of tyres,
                 dd.line([(x0 + tw * 0.3, y1 - th * 0.55), (x0 + tw * 0.6, y1 - th * 0.55)], fill=7)
     return cx, by
 
-def draw_drum(img, s):               # oil drum: kerb-red body, white band, dark rims
+def draw_drum(img, s):               # oil drum: curb-red body, white band, dark rims
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -641,7 +641,7 @@ def draw_drum(img, s):               # oil drum: kerb-red body, white band, dark
     dd.rectangle([cx - w / 2, by - max(1, 0.05 * s), cx + w / 2, by], fill=14)
     return cx, by
 
-def draw_umbrella(img, s):           # striped beach umbrella in the kerb colours
+def draw_umbrella(img, s):           # striped beach umbrella in the curb colors
     dd = ImageDraw.Draw(img)
     W, H = img.size
     cx, by = W / 2, H - 2
@@ -665,9 +665,9 @@ make_type("rock", 0, 2.1, 3.1, [28, 19, 13, 9, 6], draw_rock, "side")
 # type 7 is the flag girl: she is drawn from her own resident frames, so her table slot is empty
 OTYPES.append(dict(name="flag girl", pal=2, height=0, frames=[], zmin=0, zmax=0, tiles=0, where="start", girl=True))
 make_type("oil slick", 0, 0.6, 2.8, [9, 6, 4], draw_oil, "road", 120)
-make_type("tyre", 0, 0.8, 0.7, [14, 9, 6, 4], draw_tyre, "road", 100)
+make_type("tire", 0, 0.8, 0.7, [14, 9, 6, 4], draw_tire, "road", 100)
 make_type("shrub", 1, 1.6, 2.6, [26, 17, 11, 7, 5], draw_shrub, "side")
-make_type("tyre wall", 0, 1.3, 2.4, [22, 15, 10, 6], draw_tyrewall, "edge", 140)
+make_type("tire wall", 0, 1.3, 2.4, [22, 15, 10, 6], draw_tirewall, "edge", 140)
 make_type("oil drum", 0, 1.0, 0.7, [18, 12, 8, 5], draw_drum, "edge", 110)
 make_type("beach umbrella", 0, 2.9, 3.2, [36, 24, 16, 11, 7], draw_umbrella, "side")
 
@@ -735,7 +735,7 @@ for col in (10, 13, 15):
     lamp_tiles.append(tile_at(px, 0, 0))
 LAMP_T = hi.add_raw(lamp_tiles)
 
-# ---------------- tyre smoke (pal1, dithered so it reads as translucent) ----------------
+# ---------------- tire smoke (pal1, dithered so it reads as translucent) ----------------
 smoke_frames = []
 for r in (3, 5, 7):
     n = 2 * r + 2

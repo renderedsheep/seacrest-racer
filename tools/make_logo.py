@@ -82,13 +82,13 @@ def credit(*lines):
     glyphs['@'] = [" ### ", "#   #", "# ###", "# #  ", "# ###", "#   #", " ### "]   # copyright sign
     W = max(len(t) for t in lines) * 6 + 2
     img = Image.new("RGBA", (W, 8 * len(lines)), (0, 0, 0, 0))
-    for colour, dx, dy in ((g(0, 0, 1), 1, 1), (g(7, 7, 7), 0, 0)):
+    for color, dx, dy in ((g(0, 0, 1), 1, 1), (g(7, 7, 7), 0, 0)):
         for ln, text in enumerate(lines):
             for i, ch in enumerate(text):
                 for y, row in enumerate(glyphs.get(ch) or []):
                     for x, c in enumerate(row):
                         if c == '#':
-                            img.putpixel((i * 6 + x + dx, ln * 8 + y + dy), colour + (255,))
+                            img.putpixel((i * 6 + x + dx, ln * 8 + y + dy), color + (255,))
     return img
 
 def to_indexed(img):

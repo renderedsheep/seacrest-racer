@@ -17,7 +17,7 @@
   <img src="docs/images/gameplay.gif" alt="Seacrest Racer gameplay" width="640">
 </p>
 
-Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-bit console with no add-on chips. You get a fake-3D road, a real polygon player car the console draws itself, three rivals, a camera helicopter, a flag-waving starter, tyre smoke and an original techno soundtrack. It also ships with a **no-code software development kit**, a track and car editor in a single web page that writes new cartridges directly, so nobody has to touch a compiler.
+Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-bit console with no add-on chips. You get a fake-3D road, a real polygon player car the console draws itself, three rivals, a camera helicopter, a flag-waving starter, tire smoke and an original techno soundtrack. It also ships with a **no-code software development kit**, a track and car editor in a single web page that writes new cartridges directly, so nobody has to touch a compiler.
 
 | | |
 |:---:|:---:|
@@ -26,7 +26,7 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 | <img src="docs/images/sunset_drift.png" alt="Drifting under the helicopter at Sunset Bay" width="400"> | <img src="docs/images/skidmarks.png" alt="Skid marks on Seacrest Coast" width="400"> |
 | **Sunset Bay.** Drift under the camera helicopter. | **Seacrest Coast.** Brake + steer leaves skid marks and smoke. |
 | <img src="docs/images/hazards.png" alt="Oil slick and oil drums" width="400"> | <img src="docs/images/sunset_grandstand.png" alt="Sunset Bay grandstand straight" width="400"> |
-| **Hazards** from the SDK: oil slicks and loose tyres. | **Sunset Bay's** grandstand straight at dusk. |
+| **Hazards** from the SDK: oil slicks and loose tires. | **Sunset Bay's** grandstand straight at dusk. |
 
 ---
 
@@ -79,7 +79,7 @@ Seacrest Racer is a love letter to mid-90s arcade racers, running on a stock 16-
 - **Three laps, three rivals.** You start fourth. Wait for green.
 - **Fuel is your clock.** The gauge at the top left drains as you drive. Passing the halfway **checkpoint** and finishing each **lap** tops it up. Run dry and it's OUT OF FUEL.
 - **Stay off the walls.** The road edge scrapes off speed every time you touch it.
-- **Hazards.** On custom tracks, an **oil slick** sends you into a fishtail for about a second, and a **loose tyre** knocks off about an eighth of your speed.
+- **Hazards.** On custom tracks, an **oil slick** sends you into a fishtail for about a second, and a **loose tire** knocks off about an eighth of your speed.
 
 The [manual](seacrest_game-manual.pdf) has the full rules, driving techniques and course maps.
 
@@ -105,9 +105,9 @@ The Seacrest Racer Dev Kit is a **no-code software development kit**. It's one s
 
 1. Click a track tab, or **Duplicate** / **New blank**. A cartridge holds up to four tracks.
 2. **Draw the bends** on the course strip: drag up for right-handers and down for left-handers. **Smooth** and **Straighten** tidy them up, and **Close the loop** bends the course gently until its end meets its start.
-3. **Place objects.** Choose a type (palm, sailboat, billboard, lamp, cone, grandstand, rock, shrub, beach umbrella, tyre wall, oil drum, oil slick, loose tyre, flag girl), then click the lower strip. Drag objects to move them, press <kbd>Del</kbd> to remove one, or use **Add a row** to line a whole straight.
-4. **Tune it:** length, laps, starting fuel and refills, checkpoint position, helicopter flyovers, and every ground and sky colour (snapped to the console's 512 colours).
-5. Press **▶ Drive** to preview the driver's view, which uses the game's own road maths. Check the **Checks** panel, then **Save ROM**.
+3. **Place objects.** Choose a type (palm, sailboat, billboard, lamp, cone, grandstand, rock, shrub, beach umbrella, tire wall, oil drum, oil slick, loose tire, flag girl), then click the lower strip. Drag objects to move them, press <kbd>Del</kbd> to remove one, or use **Add a row** to line a whole straight.
+4. **Tune it:** length, laps, starting fuel and refills, checkpoint position, helicopter flyovers, and every ground and sky color (snapped to the console's 512 colors).
+5. Press **▶ Drive** to preview the driver's view, which uses the game's own road math. Check the **Checks** panel, then **Save ROM**.
 
 <p align="center">
   <img src="docs/images/devkit_course.png" alt="Course strip: bends and roadside objects" width="100%">
@@ -120,7 +120,7 @@ The Seacrest Racer Dev Kit is a **no-code software development kit**. It's one s
 </p>
 
 - **Shape:** use sliders for length, width, cabin, roof, wing and wheels, or switch to **Move points** and drag individual points of the 3D model (with left / right mirroring).
-- **Paint:** your car, its glass and tail lights, and both rival colours.
+- **Paint:** your car, its glass and tail lights, and both rival colors.
 - **Handling:** top speed in km/h, acceleration (shown as a 0–160 km/h time), steering, drift boost, brakes and grip.
 - **Sprite box preview:** shows exactly what the console will draw at each of the nine steering poses, and warns you if anything would be cut off.
 
@@ -130,10 +130,10 @@ The Seacrest Racer Dev Kit is a **no-code software development kit**. It's one s
 |---|---|
 | 4 tracks, 128 objects per track, about 25 on screen at once | Sprite limits of the console |
 | 276 tiles of art memory per track | Each *kind* of object loads its pictures into video memory. Palms plus grandstands leave little room. |
-| Car: 128 points, 96 faces, 120×64 pixel sprite box | Memory and the boot-time rasteriser |
-| Colours snap to 8 levels per channel | The console's 9-bit colour |
+| Car: 128 points, 96 faces, 120×64 pixel sprite box | Memory and the boot-time rasterizer |
+| Colors snap to 8 levels per channel | The console's 9-bit color |
 
-Some changes still need a rebuild from source: new kinds of object (new art), the rival car shape (rivals are pre-drawn sprites), more than four tracks, HUD colours and music.
+Some changes still need a rebuild from source: new kinds of object (new art), the rival car shape (rivals are pre-drawn sprites), more than four tracks, HUD colors and music.
 
 ## Box art
 
@@ -143,14 +143,14 @@ Some changes still need a rebuild from source: new kinds of object (new art), th
 
 A wraparound cover insert (back, spine and front) for a 16-bit cartridge clamshell case is in [`seacrest_box-cover.pdf`](seacrest_box-cover.pdf), with a 300 dpi image in [`seacrest_box-cover.png`](seacrest_box-cover.png).
 
-1. **Measure your case first.** Open it and measure the clear sleeve the cover slides into: the height, the width of the front panel and the width of the spine, in millimetres.
+1. **Measure your case first.** Open it and measure the clear sleeve the cover slides into: the height, the width of the front panel and the width of the spine, in millimeters.
 2. If your numbers differ from the default (211 mm tall, 147 mm front and back, 27 mm spine), rebuild the cover at your size:
    ```sh
    node docs/manual/build_manual.js        # once, to fetch the fonts
    node docs/box/build_box.js --height 211 --front 147 --spine 27
    ```
 3. Print the PDF at **100% / "actual size"** (not "fit to page") on glossy photo paper. At the default size the cover is about 12.6 × 8.3 inches, so it needs **legal (8.5 × 14 in)** paper or bigger. Letter-size paper is too small.
-4. Cut on the outside trim marks and slide the cover into the sleeve. The coloured stripes mark the spine edges for folding.
+4. Cut on the outside trim marks and slide the cover into the sleeve. The colored stripes mark the spine edges for folding.
 
 ---
 
@@ -185,10 +185,10 @@ Useful places to start:
 ## How it works
 
 - **Road:** fake 3D. Every scanline below the horizon picks its own row of a pre-drawn road image (per-line vertical scroll from a scanline interrupt) and its own horizontal offset (curves and steering).
-- **Player car:** real 3D. At boot the 68000 transforms, culls, lights and rasterises the car model from the ROM data block at nine steering angles. During play the matching pose is shown instantly, so the car reacts on the same frame you steer.
+- **Player car:** real 3D. At boot the 68000 transforms, culls, lights and rasterizes the car model from the ROM data block at nine steering angles. During play the matching pose is shown instantly, so the car reacts on the same frame you steer.
 - **Rivals, roadside objects, helicopter, flag girl:** pre-rendered sprite frames, scaled by distance. Roadside art is loaded per track into a shared video memory pool.
 - **Title screen:** the logo borrows the rival cars' tiles and palette while the title is up, and hands them back when the race starts.
-- **Sound:** an original 150 BPM techno track on the FM chip, your engine on its own FM channel through five gears, the nearest rival's engine on a PSG channel with an exaggerated Doppler shift, and tyre squeal and wall scrape on another.
+- **Sound:** an original 150 BPM techno track on the FM chip, your engine on its own FM channel through five gears, the nearest rival's engine on a PSG channel with an exaggerated Doppler shift, and tire squeal and wall scrape on another.
 - **Game loop:** locked 30 fps with double-buffered scroll and sprite tables.
 
 ## Repository layout

@@ -60,7 +60,7 @@ coast = dict(name="SEACREST COAST", nsegs=192, laps=3, fuel=50 * 60, fuel_cp=22 
              cp=96, heli=(20, 112), pal0=PAL0, pal1=PAL1, curv=expand(coast_def, 192),
              objs=coast_objects(192))
 
-# ---------------- track 2: Sunset Bay (dusk colours, lamp-lit, grandstand) ----------------
+# ---------------- track 2: Sunset Bay (dusk colors, lamp-lit, grandstand) ----------------
 sunset_def = [(8, 0), (10, -420), (6, 0), (16, 520), (6, 0), (8, -650), (8, 650), (10, 0),
               (20, 280), (6, 0), (12, -520), (10, 0), (14, 380), (12, -240), (14, 0)]
 p0 = list(PAL0)

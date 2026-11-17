@@ -59,10 +59,10 @@ td:first-child{white-space:nowrap;width:30mm}
   mask:repeating-linear-gradient(180deg,#000 0 7mm,transparent 7mm 9mm) 0 34mm/100% 100% no-repeat,linear-gradient(#000,#000) 0 0/100% 34mm no-repeat}
 .cover .sea{position:absolute;left:0;right:0;top:139mm;height:21mm;background:repeating-linear-gradient(180deg,#0e2f86 0 1.6mm,#1b4fbf 1.6mm 3mm)}
 .cover .road{position:absolute;left:0;right:0;top:159.6mm;bottom:0;background:#2a2f45;clip-path:polygon(44% 0,56% 0,100% 100%,0 100%)}
-.cover .kerbL,.cover .kerbR{position:absolute;top:159.6mm;bottom:0;width:100%;
+.cover .curbL,.cover .curbR{position:absolute;top:159.6mm;bottom:0;width:100%;
   background:repeating-linear-gradient(180deg,var(--red) 0 3mm,#fff 3mm 6mm)}
-.cover .kerbL{clip-path:polygon(44% 0,44.8% 0,4% 100%,0 100%)}
-.cover .kerbR{clip-path:polygon(55.2% 0,56% 0,100% 100%,96% 100%)}
+.cover .curbL{clip-path:polygon(44% 0,44.8% 0,4% 100%,0 100%)}
+.cover .curbR{clip-path:polygon(55.2% 0,56% 0,100% 100%,96% 100%)}
 .cover .line{position:absolute;left:49.6%;width:.8%;top:162mm;bottom:0;background:repeating-linear-gradient(180deg,#ffe35a 0 4mm,transparent 4mm 9mm)}
 .cover .topline{position:absolute;top:8mm;left:27mm;right:9mm;display:flex;justify-content:space-between;font:7.5pt "Russo One";color:#fff;letter-spacing:2.2px}
 .cover .logo{position:absolute;top:19mm;left:28mm;width:112mm}
@@ -107,7 +107,7 @@ td:first-child{white-space:nowrap;width:30mm}
 <section class="page cover">
   <div class="sun"></div>
   <div class="sea"></div>
-  <div class="road"></div><div class="kerbL"></div><div class="kerbR"></div><div class="line"></div>
+  <div class="road"></div><div class="curbL"></div><div class="curbR"></div><div class="line"></div>
   <div class="vband"><div class="chk"></div><div class="vt">SEACREST RACER</div><img class="vlogo" src="../images/playablefx_vertical.png" alt="PlayableFX"></div>
   <div class="topline"><span>16-BIT ARCADE RACING</span><span>1 PLAYER</span></div>
   <img class="logo px" src="../images/logo.png" alt="Seacrest Racer">
@@ -214,7 +214,7 @@ td:first-child{white-space:nowrap;width:30mm}
     <img class="shot px" src="../images/sunset_title.png" alt="">
     <p class="cap">The title screen runs a demo lap of the selected course behind the logo: here, Sunset Bay.</p>
     <h3>Choosing a course</h3>
-    <p>The name between the arrows is the course you'll race. Press <span class="kbd">◀</span> or <span class="kbd">▶</span> to flip through the courses on the cartridge. The scenery and colours behind the logo change as you go, so you can see where you're headed.</p>
+    <p>The name between the arrows is the course you'll race. Press <span class="kbd">◀</span> or <span class="kbd">▶</span> to flip through the courses on the cartridge. The scenery and colors behind the logo change as you go, so you can see where you're headed.</p>
     <p>The standard cartridge has two courses, <b>Seacrest Coast</b> and <b>Sunset Bay</b>. A cartridge edited with the Dev Kit can hold up to four.</p>
     <h3>Starting</h3>
     <p>Press <span class="kbd">START</span>. The field lines up on the grid, the starter raises her flag and the lights run red, amber, green.</p>
@@ -264,7 +264,7 @@ td:first-child{white-space:nowrap;width:30mm}
     <h2>Laps and finishing</h2>
     <p>Complete all the laps (three on the standard courses) before the fuel runs out. Your finishing position is locked in the moment you cross the line.</p>
     <h2>The road edge</h2>
-    <p>The road is lined with kerbs and barriers. Run into the edge and you'll scrape along it, losing speed with every hit. You can't leave the road, so the fastest way round is to stay off the edges.</p>
+    <p>The road is lined with curbs and barriers. Run into the edge and you'll scrape along it, losing speed with every hit. You can't leave the road, so the fastest way round is to stay off the edges.</p>
     <img class="shot px" src="../images/sunset_grandstand.png" alt="" style="margin-top:2mm;width:78%;margin-left:auto;margin-right:auto">
     <p class="cap" style="text-align:center">Sunset Bay's grandstand straight. A camera helicopter also flies over at certain points on each course; it's harmless scenery.</p>
   </div>
@@ -278,7 +278,7 @@ td:first-child{white-space:nowrap;width:30mm}
     <div class="two">
       <div>
         <h2>The drift</h2>
-        <p>Above half speed, hold <span class="kbd r">B</span> and steer into a bend. The tail swings out, the tyres squeal and smoke, and the car turns much faster than steering alone. Let go of B as the bend straightens to keep your speed.</p>
+        <p>Above half speed, hold <span class="kbd r">B</span> and steer into a bend. The tail swings out, the tires squeal and smoke, and the car turns much faster than steering alone. Let go of B as the bend straightens to keep your speed.</p>
       </div>
       <img class="shot px" src="../images/sunset_drift.png" alt="">
     </div>
@@ -289,7 +289,7 @@ td:first-child{white-space:nowrap;width:30mm}
       <img class="shot px" src="../images/hazards.png" alt="">
       <div>
         <p><b>Oil slick.</b> Drive over one and the car fishtails for about a second. Steering barely responds until it grips again, so steer around slicks if you can.</p>
-        <p><b>Loose tyre.</b> Hitting a tyre lying in the road knocks off about an eighth of your speed.</p>
+        <p><b>Loose tire.</b> Hitting a tire lying in the road knocks off about an eighth of your speed.</p>
         <p style="font-size:8pt;color:var(--muted)">The standard courses have no hazards. They appear on courses built with the Dev Kit.</p>
       </div>
     </div>
@@ -324,7 +324,7 @@ td:first-child{white-space:nowrap;width:30mm}
   <div class="body">
     <p>Seacrest Racer comes with a <b>no-code software development kit</b>: a track editor and a car editor in a single web page. Open <b>seacrest_devkit.html</b> in Chrome, Firefox or Edge (no internet needed), change what you like and press <b>Save ROM</b>. You get a new cartridge file that runs on emulators and real hardware. Nothing to compile.</p>
     <img class="shot" src="../images/devkit_track.png" alt="">
-    <p class="cap">The track editor: driver's-view preview, course map, settings, colours and the course strip.</p>
+    <p class="cap">The track editor: driver's-view preview, course map, settings, colors and the course strip.</p>
     <h3>Make a track in five steps</h3>
     <ol>
       <li><b>Open ROM…</b> or start from the built-in cartridge.</li>
@@ -345,9 +345,9 @@ td:first-child{white-space:nowrap;width:30mm}
     <p class="cap">The car editor: in-game view, the console's 120×64 sprite box, and a 3D model you can turn and reshape.</p>
     <table style="margin-top:2mm">
       <tr><td>Courses</td><td>Name, length, laps, bends, fuel, checkpoint, helicopter timing</td></tr>
-      <tr><td>Colours</td><td>Sea, sand, grass, road, kerbs, sky, hills, sun, palms (all limited to the console's 512 colours)</td></tr>
-      <tr><td>Scenery</td><td>Palms, sailboats, billboards, lamps, cones, grandstands, rocks, shrubs, umbrellas, tyre walls, oil drums, flag girl</td></tr>
-      <tr><td>Hazards</td><td>Oil slicks and loose tyres</td></tr>
+      <tr><td>Colors</td><td>Sea, sand, grass, road, curbs, sky, hills, sun, palms (all limited to the console's 512 colors)</td></tr>
+      <tr><td>Scenery</td><td>Palms, sailboats, billboards, lamps, cones, grandstands, rocks, shrubs, umbrellas, tire walls, oil drums, flag girl</td></tr>
+      <tr><td>Hazards</td><td>Oil slicks and loose tires</td></tr>
       <tr><td>Your car</td><td>Shape (sliders or by moving points), paint, rival paint, top speed, acceleration, steering, drift, brakes, grip</td></tr>
     </table>
     <h3>Console limits the Dev Kit checks for you</h3>

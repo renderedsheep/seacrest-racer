@@ -2,7 +2,7 @@
  * Licensed under the PolyForm Noncommercial License 1.0.0 (see LICENSE.md and NOTICE). */
 /* SEACREST RACER - arcade racer demo for Sega Genesis / Mega Drive.
  * Road: per-line scrolled plane (fake 3D). Player car: flat-shaded polygons
- * rasterised by the 68000 into sprite tiles (9 steering angles, rendered at boot).
+ * rasterized by the 68000 into sprite tiles (9 steering angles, rendered at boot).
  * Rivals/palms/helicopter/boats/flag girl: pre-rendered sprite frames. */
 #include "md.h"
 #include "../build/assets.h"
@@ -102,7 +102,7 @@ static s16 steer_hold;   /* frames the stick has been held at speed */
 static u8  skid;         /* frames of skid effect remaining */
 static u8  slip;         /* frames of oil-slick slide remaining */
 static s8  slip_dir;
-static u8  bump_cd;      /* cooldown after hitting a loose tyre */
+static u8  bump_cd;      /* cooldown after hitting a loose tire */
 #define T_OIL  8
 #define T_TYRE 9
 static u8  skid_phase;
@@ -341,7 +341,7 @@ static void load_car(void) {
         for (u8 k = 0; k < 4; k++) { u8 vi = DB[o + k]; mfv[f][k] = vi < nvert ? vi : 0; }
         mfmat[f] = DB[o + 4] > 5 ? 1 : DB[o + 4];
         mfcull[f] = (DB[o + 5] & 1) ? 0 : 1;
-        /* normal from the quad's diagonals, normalised to length 64 */
+        /* normal from the quad's diagonals, normalized to length 64 */
         const s16 *p0 = mv[mfv[f][0]], *p1 = mv[mfv[f][1]], *p2 = mv[mfv[f][2]], *p3 = mv[mfv[f][3]];
         s32 ux = (p2[0] - p0[0]) >> 2, uy = (p2[1] - p0[1]) >> 2, uz = (p2[2] - p0[2]) >> 2;
         s32 wx = (p3[0] - p1[0]) >> 2, wy = (p3[1] - p1[1]) >> 2, wz = (p3[2] - p1[2]) >> 2;
@@ -456,7 +456,7 @@ static s32 wrap_rel(s32 p) {
     return r;
 }
 
-/* ---------------- player car rasteriser ---------------- */
+/* ---------------- player car rasterizer ---------------- */
 /* The car buffer is 120x64 pixels laid out as sprite tiles: two 15x4-cell bands
  * (rows 0-31 and 32-63), each column-major so every 32-pixel column is one sprite. */
 static u32 *cbuf;
@@ -568,8 +568,8 @@ static void car_face(u16 f) {
 }
 
 /* Render the player car from its polygon model at one yaw angle into buf. */
-static void render_car_angle(u32 *buf, u8 ai) {
-    s16 yq = car_angles[ai];
+static void render_car_angle(u32 *buf, u8 pose) {
+    s16 yq = car_angles[pose];
     cbuf = buf;
     for (u16 i = 0; i < CAR_LONGS; i++) buf[i] = 0;
     rc_cs = icos((u8)yq); rc_sn = isin((u8)yq);
@@ -585,11 +585,11 @@ static void render_car_angle(u32 *buf, u8 ai) {
         if (sv_x[i] < xmin) xmin = sv_x[i];
         if (sv_x[i] > xmax) xmax = sv_x[i];
     }
-    /* centre this pose in the box; the sprite is shifted back on screen by the same amount */
+    /* center this pose in the box; the sprite is shifted back on screen by the same amount */
     s16 ox = ((CAR_BW / 2) << 4) - ((xmin + xmax) >> 1);
     ox &= ~15;
     for (u16 i = 0; i < nvert; i++) sv_x[i] += ox;
-    car_ox[ai] = ox >> 4;
+    car_ox[pose] = ox >> 4;
     for (u16 f = 0; f < nface; f++) car_face(f);
 }
 
@@ -717,7 +717,7 @@ static void update_player(u8 dt) {
         gas = (p & (PAD_A | PAD_C)) != 0;     /* rev the engine on the grid */
     }
     s16 speed_before = speed;
-    /* hazards placed on the road: oil slicks make the car fishtail, a loose tyre costs speed */
+    /* hazards placed on the road: oil slicks make the car fishtail, a loose tire costs speed */
     if (state == ST_RACE && speed > 40) {
         for (u8 i = 0; i < nob; i++) {
             u8 ty = ob_type[i];
@@ -910,7 +910,7 @@ static void build_frame(void) {
         if (frame & 32) text_spr(116, 98, "PRESS START", 0);
     }
 
-    /* tyre smoke in front of the car (it is closer to the camera), skid streaks under it */
+    /* tire smoke in front of the car (it is closer to the camera), skid streaks under it */
     for (u8 i = 0; i < NPUFF; i++) {
         Puff *q = &puffs[i];
         if (!q->on) continue;
@@ -944,7 +944,7 @@ static void build_frame(void) {
         Obj *o = &objs[i];
         s16 sx, sy;
         if (o->kind == 0) {
-            s16 cx = 160 + (s16)((mul16(px - camx, 31 * 8)) >> 11);   /* screen x of the car's centre line */
+            s16 cx = 160 + (s16)((mul16(px - camx, 31 * 8)) >> 11);   /* screen x of the car's center line */
             s16 bx = cx - car_ox[car_show];
             s16 by = CAR_TOP + ((speed > 60 && (frame & 4)) ? 1 : 0);
             /* rear wheels on screen (for smoke/skids), shifted by the car's yaw */

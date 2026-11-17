@@ -4,7 +4,7 @@
 // Prints the box cover (docs/box/box.html) to:
 //   seacrest_box-cover.pdf   print-ready sheet with crop and fold marks
 //   seacrest_box-cover.png   the insert alone with bleed, 300 dpi
-// Measure the paper insert slot of your case and pass the sizes in millimetres:
+// Measure the paper insert slot of your case and pass the sizes in millimeters:
 //   node docs/box/build_box.js --height 211 --front 147 --spine 27
 // Needs the fonts copied by docs/manual/build_manual.js (run that once first).
 const { chromium } = require('playwright');

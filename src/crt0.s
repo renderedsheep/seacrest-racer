@@ -48,7 +48,7 @@ _start:
 	move.w	#0x3FFF,d0
 2:	clr.l	(a0)+
 	dbra	d0,2b
-	lea	__data_load,a0		| copy initialised data
+	lea	__data_load,a0		| copy initialized data
 	lea	__data_start,a1
 	move.l	#__data_end,d0
 	sub.l	a1,d0
